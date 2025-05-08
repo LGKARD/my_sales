@@ -6,7 +6,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/http/server.ts",
     "lint": "eslint --ext .ts src/",
     "lint-fix": "eslint --ext .ts src/ --fix",
-    "migration:create": "cross-env migration_name=$npm_config_name typeorm migration:create ./src/shared/typeorm/migrations/$npm_config_name",
+    "migration:create": "cross-env TS_NODE_PROJECT=tsconfig.json typeorm migration:create -d ./src/shared/typeorm/data-source.ts src/shared/typeorm/migrations/$npm_config_name",
+
     "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/typeorm/data-source.ts"
   },
   "keywords": [],
