@@ -2,6 +2,7 @@ import express from 'express';
 import { routes } from './routes';
 import cors from 'cors';
 import 'reflect-metadata';
+import { errors } from 'celebrate';
 
 import 'express-async-errors';
 import ErrorHandleMiddleware from '@shared/middlewares/ErrorHandleMiddleware';
@@ -13,7 +14,7 @@ AppDataSource.initialize().then(async () => {
   app.use(cors());
   app.use(express.json());
   app.use(routes);
-
+  app.use(errors());
   app.use(ErrorHandleMiddleware.handleError);
 
   console.log('Connected to database');
