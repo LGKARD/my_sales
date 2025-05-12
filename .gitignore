@@ -1,10 +1,10 @@
 .env
-node_modules/
-build/
+/node_modules/
+/build/
 dist
 temp/
 coverage
 ormconfig.json
 
-uploads/*
+/uploads/*
 !uploads/.gitkeep
