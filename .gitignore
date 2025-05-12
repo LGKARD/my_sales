@@ -2,4 +2,9 @@
 node_modules/
 build/
 dist
+temp/
+coverage
+ormconfig.json
 
+uploads/*
+!uploads/.gitkeep
