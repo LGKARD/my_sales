@@ -13,4 +13,4 @@ routes.use('/products', productRoutes)
 routes.use('/users', usersRouter)
 routes.use('/session', sessionRoutes)
 
-export { routes };
+export default routes;
